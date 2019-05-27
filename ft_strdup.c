@@ -6,7 +6,7 @@
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 14:59:45 by jhansen           #+#    #+#             */
-/*   Updated: 2019/05/22 15:47:40 by jhansen          ###   ########.fr       */
+/*   Updated: 2019/05/27 17:12:07 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ char	*ft_strdup(const char *s1)
 	if (string == NULL)
 		return (NULL);
 	else
-	{
-		ft_memcpy(string, s1, ft_strlen(s1)+1);
-	}
+		ft_memcpy(string, s1, ft_strlen(s1) + 1);
 	return (string);
 }

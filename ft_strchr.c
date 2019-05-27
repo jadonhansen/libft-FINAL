@@ -6,7 +6,7 @@
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 11:08:19 by jhansen           #+#    #+#             */
-/*   Updated: 2019/05/23 11:33:43 by jhansen          ###   ########.fr       */
+/*   Updated: 2019/05/27 17:17:07 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strchr(const char *s, int c)
 		if (*s == c)
 		{
 			found = 1;
-			break;
+			break ;
 		}
 		else
 			s++;

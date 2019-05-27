@@ -6,7 +6,7 @@
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 10:19:21 by jhansen           #+#    #+#             */
-/*   Updated: 2019/05/27 12:07:25 by jhansen          ###   ########.fr       */
+/*   Updated: 2019/05/27 17:03:54 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	int i;
-	char *dest;
-	const char *source;
+	int			i;
+	char		*dest;
+	const char	*source;
 
 	dest = dst;
 	source = src;
@@ -37,5 +37,4 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 		n--;
 	}
 	return (NULL);
-
 }
