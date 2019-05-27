@@ -1,31 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 14:02:42 by jhansen           #+#    #+#             */
-/*   Updated: 2019/05/27 15:54:37 by jhansen          ###   ########.fr       */
+/*   Created: 2019/05/27 11:38:39 by jhansen           #+#    #+#             */
+/*   Updated: 2019/05/27 13:11:16 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t i;
+	int i;
+	int x;
+	char *dest;
+	const char *source;
 
 	i = 0;
-	while (src[i] != '\0' && i < len)
+	x = ((int)len - 1);
+	dest = dst;
+	source = src;
+	if (dest == source && len > 0)
+		return (NULL);
+	if (source < dest)
 	{
-		dst[i] = src[i];
-		i++;
+		while (x >= 0)
+		{
+			dest[x] = source[x];
+			x--;
+		}
 	}
-	while (i < len)
+	else
 	{
-		dst[i] = '\0';
-		i++;
+		while (i < (int)len)
+		{
+			dest[i] = source[i];
+			i++;
+		}
+		dest[i] = '\0';
 	}
-	return (dst);
+	return (dest);
 }
