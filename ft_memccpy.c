@@ -21,20 +21,12 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	dest = dst;
 	source = src;
 	i = 0;
-	while (n > 0)
+	while ((size_t)i < n)
 	{
+		dest[i] = source[i];
 		if (source[i] == (char)c)
-		{
-			dest[i++] = (char)c;
-			dest[i] = '\0';
-			return (dest);
-		}
-		else
-		{
-			dest[i] = source[i];
-			i++;
-		}
-		n--;
+			return (dst + i + 1);
+		i++;
 	}
 	return (NULL);
 }
