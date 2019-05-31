@@ -6,7 +6,7 @@
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 11:24:08 by jhansen           #+#    #+#             */
-/*   Updated: 2019/05/30 17:00:24 by jhansen          ###   ########.fr       */
+/*   Updated: 2019/05/31 11:44:38 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_putendl(char const *s)
 {
 	char c;
 
-	c = '\0';
+	c = '\n';
 	ft_putstr(s);
 	ft_putchar(c);
 }

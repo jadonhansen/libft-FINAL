@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/30 12:57:20 by jhansen           #+#    #+#             */
-/*   Updated: 2019/05/31 11:56:27 by jhansen          ###   ########.fr       */
+/*   Created: 2019/05/31 10:24:37 by jhansen           #+#    #+#             */
+/*   Updated: 2019/05/31 10:58:09 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+int		ft_strequ(char const *s1, char const *s2)
 {
-	char *string;
+	int i;
 
-	string = (char *)malloc(sizeof(char) * size + 1);
-	if (string == NULL)
-		return (NULL);
-	ft_memset(string, '\0', size + 1);
-	return (string);
+	i = 0;
+	if (ft_strlen(s1) == ft_strlen(s2))
+	{
+		while (s1[i] != '\0' && s2[i] != '\0')
+		{
+			if (s1[i] == s2[i])
+				i++;
+			else
+				return (0);
+		}
+		return (1);
+	}
+	return (0);
 }
