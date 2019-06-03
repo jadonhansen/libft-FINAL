@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/31 12:41:29 by jhansen           #+#    #+#             */
-/*   Updated: 2019/06/03 17:04:04 by jhansen          ###   ########.fr       */
+/*   Created: 2019/06/03 16:27:01 by jhansen           #+#    #+#             */
+/*   Updated: 2019/06/03 17:14:47 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
-	size_t	i;
-
-	i = 0;
-	if (s == NULL)
-		return (NULL);
-	str = (char *)malloc(sizeof(char) * len);
-	if (str == NULL)
-		return (NULL);
-	while (s[start] != '\0' && i < len)
+	if (n == -2147483648)
 	{
-		str[i] = s[start];
-		start++;
-		i++;
+		ft_putstr_fd("-2147483648", fd);
+		return ;
 	}
-	str[i] = '\0';
-	return (str);
+	if (n < 0)
+	{
+		n *= -1;
+		ft_putchar_fd('-', fd);
+	}
+	if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	else
+		ft_putchar_fd(n + '0', fd);
 }

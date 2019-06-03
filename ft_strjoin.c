@@ -6,7 +6,7 @@
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 14:05:55 by jhansen           #+#    #+#             */
-/*   Updated: 2019/05/31 14:44:57 by jhansen          ###   ########.fr       */
+/*   Updated: 2019/06/03 17:00:19 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *string;
-	size_t i;
+	char	*string;
+	size_t	i;
 
 	i = 0;
 	string = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
