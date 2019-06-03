@@ -6,7 +6,7 @@
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 12:41:29 by jhansen           #+#    #+#             */
-/*   Updated: 2019/05/31 14:01:56 by jhansen          ###   ########.fr       */
+/*   Updated: 2019/06/03 09:55:01 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 		start++;
 		i++;
 	}
+	str[i] = '\0';
 	return (str);
 }
