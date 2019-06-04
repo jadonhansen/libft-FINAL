@@ -4,7 +4,7 @@ SRC = *.c
 FLAGS = -Wall -Werror -Wextra
 OPTIONS = -c -I.
 
-All: $(NAME)
+all: $(NAME)
 
 $(NAME): 
 	gcc $(FLAGS) $(SRC) $(OPTIONS)
@@ -17,4 +17,4 @@ clean:
 fclean: clean
 	/bin/rm -f $(NAME)
 
-re: fclean All
+re: fclean all

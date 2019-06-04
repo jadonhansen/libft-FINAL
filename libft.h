@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/04 15:09:10 by jhansen           #+#    #+#             */
+/*   Updated: 2019/06/04 15:09:15 by jhansen          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
 
 int		ft_tolower(int c);
 int		ft_toupper(int c);
