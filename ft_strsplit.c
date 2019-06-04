@@ -6,7 +6,7 @@
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 12:44:09 by jhansen           #+#    #+#             */
-/*   Updated: 2019/06/04 15:09:01 by jhansen          ###   ########.fr       */
+/*   Updated: 2019/06/04 15:24:25 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,7 @@ char	**ft_strsplit(char const *s, char c)
 		while (s[i] == c)
 			i++;
 		while (s[i] != c && s[i] != '\0')
-		{
 			array[j][k++] = s[i++];
-		}
 		array[j][k] = '\0';
 		j++;
 	}
