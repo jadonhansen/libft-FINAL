@@ -6,7 +6,7 @@
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 12:34:24 by jhansen           #+#    #+#             */
-/*   Updated: 2019/05/29 12:56:00 by jhansen          ###   ########.fr       */
+/*   Updated: 2019/06/05 17:05:38 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	while (*s != '\0')
+	if (s != NULL)
 	{
-		ft_putchar_fd(*s, fd);
-		s++;
+		while (*s != '\0')
+		{
+			ft_putchar_fd(*s, fd);
+			s++;
+		}
 	}
 }

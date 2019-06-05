@@ -6,7 +6,7 @@
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 12:44:09 by jhansen           #+#    #+#             */
-/*   Updated: 2019/06/05 15:43:50 by jhansen          ###   ########.fr       */
+/*   Updated: 2019/06/05 17:14:50 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ char		**ft_strsplit(char const *s, char c)
 
 	i = 0;
 	j = 0;
+	if (s == NULL || c == (char)NULL)
+		return (NULL);
 	count = word_count(s, c, 0);
 	array = (char **)malloc(sizeof(char *) * count + 1);
 	if (array == NULL)

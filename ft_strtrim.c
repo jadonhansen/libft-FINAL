@@ -6,7 +6,7 @@
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 09:48:30 by jhansen           #+#    #+#             */
-/*   Updated: 2019/06/05 15:37:44 by jhansen          ###   ########.fr       */
+/*   Updated: 2019/06/05 17:13:04 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strtrim(char const *s)
 
 	j = 0;
 	i = 0;
+	if (s == NULL)
+		return (NULL);
 	string = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
 	if (string == NULL)
 		return (NULL);
