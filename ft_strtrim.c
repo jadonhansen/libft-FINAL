@@ -6,7 +6,7 @@
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 09:48:30 by jhansen           #+#    #+#             */
-/*   Updated: 2019/06/03 11:35:23 by jhansen          ###   ########.fr       */
+/*   Updated: 2019/06/05 15:37:44 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,15 @@ char	*ft_strtrim(char const *s)
 		return (NULL);
 	while (s[i] != '\0')
 		i++;
-	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t' || s[i] == ',' || s[i] == '\0')
+	while ((s[i] == ' ' || s[i] == '\n' || s[i] == '\t' || s[i] == ','
+			|| s[i] == '\0'))
 		i--;
 	stop = i;
 	i = 0;
 	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t' || s[i] == ',')
 		i++;
 	while (i <= stop && j < ft_strlen(s))
-	{
-		string[j] = s[i];
-		j++;
-		i++;
-	}
+		string[j++] = s[i++];
 	string[j] = '\0';
 	return (string);
 }

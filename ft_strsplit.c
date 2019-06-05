@@ -6,7 +6,7 @@
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 12:44:09 by jhansen           #+#    #+#             */
-/*   Updated: 2019/06/04 15:24:25 by jhansen          ###   ########.fr       */
+/*   Updated: 2019/06/05 15:43:50 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int	word_len(char const *s, char c, int index)
 	return (i);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char		**ft_strsplit(char const *s, char c)
 {
 	char	**array;
 	int		count;
@@ -67,8 +67,7 @@ char	**ft_strsplit(char const *s, char c)
 			i++;
 		while (s[i] != c && s[i] != '\0')
 			array[j][k++] = s[i++];
-		array[j][k] = '\0';
-		j++;
+		array[j++][k] = '\0';
 	}
 	array[j] = 0;
 	return (array);
