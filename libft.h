@@ -6,12 +6,13 @@
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 15:09:10 by jhansen           #+#    #+#             */
-/*   Updated: 2019/06/04 15:09:15 by jhansen          ###   ########.fr       */
+/*   Updated: 2019/06/05 14:38:10 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define INTMIN -2147483648
 
 # include <string.h>
 # include <stdlib.h>
