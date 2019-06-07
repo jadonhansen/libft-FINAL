@@ -6,7 +6,7 @@
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 15:50:46 by jhansen           #+#    #+#             */
-/*   Updated: 2019/06/05 17:02:58 by jhansen          ###   ########.fr       */
+/*   Updated: 2019/06/07 10:40:17 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,10 @@ static char		*negcase(int num, int count)
 	rem = 0;
 	num *= -1;
 	if (num == INTMIN)
-		return ("-2147483648\0");
+	{
+		str =  ft_strdup("-2147483648");
+		return (str);
+	}
 	str = (char *)malloc(sizeof(char) * count + 2);
 	if (str == NULL)
 		return (NULL);
@@ -66,7 +69,11 @@ char			*ft_itoa(int n)
 	rem = 0;
 	count = getlen(n);
 	if (n == 0)
-		return ("0\0");
+	{
+		str = ft_strnew(1);
+		str[0] = '0';
+		return (str);
+	}
 	if (n < 0)
 		str = negcase(n, count);
 	else
