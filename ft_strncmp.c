@@ -6,7 +6,7 @@
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 14:03:56 by jhansen           #+#    #+#             */
-/*   Updated: 2019/05/30 11:15:17 by jhansen          ###   ########.fr       */
+/*   Updated: 2019/06/10 16:26:03 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 		{
 			i++;
 		}
-		return (str1[i] - str2[i]);
+		if (str1[i] > str2[i])
+			return (1);
+		if (str1[i] < str2[i])
+			return (-1);
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 15:09:10 by jhansen           #+#    #+#             */
-/*   Updated: 2019/06/05 14:38:10 by jhansen          ###   ########.fr       */
+/*   Updated: 2019/06/10 16:00:12 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,11 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char const *s, char c);
+int		ft_getlen(int num);
+char	*ft_negcase(int num, int count);
+char	*ft_poscase(int num, int count);
+int		ft_word_count(char const *s, char c, int index);
+int		ft_word_len(char const *s, char c, int index);
+char	**ft_populatearray(int count, char c, char const *s, char **array);
 
 #endif

@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_getlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/30 14:03:20 by jhansen           #+#    #+#             */
-/*   Updated: 2019/06/10 16:48:33 by jhansen          ###   ########.fr       */
+/*   Created: 2019/06/10 16:00:53 by jhansen           #+#    #+#             */
+/*   Updated: 2019/06/10 16:11:49 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striter(char *s, void (*f)(char *))
+int		ft_getlen(int num)
 {
-	if (!s || !f)
-		return ;
-	while (*s)
+	int count;
+
+	count = 0;
+	if (num < 0)
+		num *= -1;
+	while (num >= 10)
 	{
-		f(&*s);
-		s++;
+		num = num / 10;
+		count++;
 	}
+	if (num > 0)
+		count++;
+	return (count);
 }

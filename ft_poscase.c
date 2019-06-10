@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_poscase.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/30 14:03:20 by jhansen           #+#    #+#             */
-/*   Updated: 2019/06/10 16:48:33 by jhansen          ###   ########.fr       */
+/*   Created: 2019/06/10 16:02:15 by jhansen           #+#    #+#             */
+/*   Updated: 2019/06/10 16:11:19 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striter(char *s, void (*f)(char *))
+char	*ft_poscase(int num, int count)
 {
-	if (!s || !f)
-		return ;
-	while (*s)
+	int		i;
+	int		rem;
+	char	*str;
+
+	i = 0;
+	rem = 0;
+	if (!(str = ft_strnew(count + 1)))
+		return (NULL);
+	while (i < count)
 	{
-		f(&*s);
-		s++;
+		rem = num % 10;
+		num = num / 10;
+		str[count - (i + 1)] = rem + '0';
+		i++;
 	}
+	str[count] = '\0';
+	return (str);
 }
