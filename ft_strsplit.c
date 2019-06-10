@@ -6,13 +6,13 @@
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 12:44:09 by jhansen           #+#    #+#             */
-/*   Updated: 2019/06/05 17:14:50 by jhansen          ###   ########.fr       */
+/*   Updated: 2019/06/10 14:03:01 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	word_count(char const *s, char c, int index)
+static int		word_count(char const *s, char c, int index)
 {
 	int i;
 
@@ -29,7 +29,7 @@ static int	word_count(char const *s, char c, int index)
 	return (i + word_count(s, c, index));
 }
 
-static int	word_len(char const *s, char c, int index)
+static int		word_len(char const *s, char c, int index)
 {
 	int i;
 
@@ -44,22 +44,14 @@ static int	word_len(char const *s, char c, int index)
 	return (i);
 }
 
-char		**ft_strsplit(char const *s, char c)
+static char		**populatearray(int count, char c, char const *s, char **array)
 {
-	char	**array;
-	int		count;
-	int		i;
-	int		j;
-	int		k;
+	int i;
+	int k;
+	int j;
 
 	i = 0;
 	j = 0;
-	if (s == NULL || c == (char)NULL)
-		return (NULL);
-	count = word_count(s, c, 0);
-	array = (char **)malloc(sizeof(char *) * count + 1);
-	if (array == NULL)
-		return (NULL);
 	while (j < count)
 	{
 		k = 0;
@@ -72,5 +64,20 @@ char		**ft_strsplit(char const *s, char c)
 		array[j++][k] = '\0';
 	}
 	array[j] = 0;
+	return (array);
+}
+
+char			**ft_strsplit(char const *s, char c)
+{
+	char	**array;
+	int		count;
+
+	if (s == NULL || c == (char)NULL)
+		return (NULL);
+	count = word_count(s, c, 0);
+	array = (char **)malloc(sizeof(char *) * count + 1);
+	if (array == NULL)
+		return (NULL);
+	populatearray(count, c, s, array);
 	return (array);
 }

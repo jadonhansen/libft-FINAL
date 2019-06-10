@@ -6,7 +6,7 @@
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 15:50:46 by jhansen           #+#    #+#             */
-/*   Updated: 2019/06/07 10:40:17 by jhansen          ###   ########.fr       */
+/*   Updated: 2019/06/10 14:02:39 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static char		*negcase(int num, int count)
 	num *= -1;
 	if (num == INTMIN)
 	{
-		str =  ft_strdup("-2147483648");
+		str = ft_strdup("-2147483648");
 		return (str);
 	}
 	str = (char *)malloc(sizeof(char) * count + 2);
@@ -58,15 +58,32 @@ static char		*negcase(int num, int count)
 	return (str);
 }
 
-char			*ft_itoa(int n)
+static char		*poscase(int num, int count)
 {
 	int		i;
 	int		rem;
-	int		count;
 	char	*str;
 
 	i = 0;
 	rem = 0;
+	if (!(str = ft_strnew(count + 1)))
+		return (NULL);
+	while (i < count)
+	{
+		rem = num % 10;
+		num = num / 10;
+		str[count - (i + 1)] = rem + '0';
+		i++;
+	}
+	str[count] = '\0';
+	return (str);
+}
+
+char			*ft_itoa(int n)
+{
+	int		count;
+	char	*str;
+
 	count = getlen(n);
 	if (n == 0)
 	{
@@ -77,18 +94,6 @@ char			*ft_itoa(int n)
 	if (n < 0)
 		str = negcase(n, count);
 	else
-	{
-		str = (char *)malloc(sizeof(char) * count + 1);
-		if (str == NULL)
-			return (NULL);
-		while (i < count)
-		{
-			rem = n % 10;
-			n = n / 10;
-			str[count - (i + 1)] = rem + '0';
-			i++;
-		}
-		str[count] = '\0';
-	}
+		str = poscase(n, count);
 	return (str);
 }

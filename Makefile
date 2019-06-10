@@ -11,11 +11,6 @@ $(NAME):
 	ar rc $(NAME) $(OBJECTS)
 	ranlib $(NAME)
 
-so:
-	gcc -c ft_*.c -Wall -Wextra -Werror
-	gcc -shared -o libft.so -fPIC ft*.o
-	rm *.o
-
 clean: 
 	/bin/rm -f $(OBJECTS)
 
