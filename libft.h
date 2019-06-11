@@ -6,7 +6,7 @@
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 15:09:10 by jhansen           #+#    #+#             */
-/*   Updated: 2019/06/10 16:00:12 by jhansen          ###   ########.fr       */
+/*   Updated: 2019/06/11 10:26:54 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,13 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+typedef struct		s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}					t_list
 
 int		ft_tolower(int c);
 int		ft_toupper(int c);
