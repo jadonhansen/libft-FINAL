@@ -6,20 +6,32 @@
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 09:48:30 by jhansen           #+#    #+#             */
-/*   Updated: 2019/06/10 13:07:08 by jhansen          ###   ########.fr       */
+/*   Updated: 2019/06/11 13:58:01 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+static char	*ft_elsecase(int stop, int start, const char *s)
 {
-	int		stop;
-	int		i;
 	size_t	j;
 	char	*string;
 
 	j = 0;
+	if (!(string = ft_strnew(stop - start + 1)))
+		return (NULL);
+	while (start <= stop && j < ft_strlen(s))
+		string[j++] = s[start++];
+	string[j] = '\0';
+	return (string);
+}
+
+char		*ft_strtrim(char const *s)
+{
+	int		stop;
+	int		i;
+	char	*string;
+
 	i = 0;
 	if (s == NULL)
 		return (NULL);
@@ -32,11 +44,11 @@ char	*ft_strtrim(char const *s)
 	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t' || s[i] == ',')
 		i++;
 	if (stop < i)
-		return ("");
-	if (!(string = ft_strnew(stop - i + 1)))
-		return (NULL);
-	while (i <= stop && j < ft_strlen(s))
-		string[j++] = s[i++];
-	string[j] = '\0';
+	{
+		string = (char *)malloc(sizeof(char));
+		string[0] = '\0';
+	}
+	else
+		string = ft_elsecase(stop, i, s);
 	return (string);
 }
