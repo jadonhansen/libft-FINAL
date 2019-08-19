@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/18 16:54:18 by jhansen           #+#    #+#             */
-/*   Updated: 2019/07/18 16:58:21 by jhansen          ###   ########.fr       */
+/*   Created: 2019/08/13 13:51:44 by jhansen           #+#    #+#             */
+/*   Updated: 2019/08/13 16:14:19 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_str_is_numeric(const char *str)
+int		ft_intlen(int n)
 {
-	while ((ft_isdigit(*str) || *str == '-') && *str)
-		str++;
-	if (*str)
-		return (0);
-	return (1);
+	int	i;
+
+	i = 0;
+	if (n < 0)
+	{
+		i++;
+		n = n * -1;
+	}
+	while (n >= 10)
+	{
+		n = n / 10;
+		i++;
+	}
+	if (n >= 0)
+		i++;
+	return (i);
 }

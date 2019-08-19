@@ -1,22 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/18 16:54:18 by jhansen           #+#    #+#             */
-/*   Updated: 2019/07/18 16:58:21 by jhansen          ###   ########.fr       */
+/*   Created: 2019/08/15 11:38:22 by jhansen           #+#    #+#             */
+/*   Updated: 2019/08/15 12:28:56 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_str_is_numeric(const char *str)
+long	ft_atol(char *s)
 {
-	while ((ft_isdigit(*str) || *str == '-') && *str)
-		str++;
-	if (*str)
-		return (0);
-	return (1);
+	long i;
+	long neg;
+	long res;
+
+	i = 0;
+	neg = 1;
+	res = 0;
+	while ((s[i] == '\n' || s[i] == '\t' || s[i] == '\r'
+			|| s[i] == '\f' || s[i] == '\v' || s[i] == ' '))
+		i++;
+	if (s[i] == '-' || s[i] == '+')
+	{
+		if (s[i] == '-')
+			neg = -1;
+		i++;
+	}
+	while (s[i] <= '9' && s[i] >= '0')
+	{
+		res = res * 10 + (s[i] - '0');
+		i++;
+	}
+	return (res * neg);
 }

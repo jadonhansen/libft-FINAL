@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_putstr_colour.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhansen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/18 16:54:18 by jhansen           #+#    #+#             */
-/*   Updated: 2019/07/18 16:58:21 by jhansen          ###   ########.fr       */
+/*   Created: 2019/08/13 16:04:55 by jhansen           #+#    #+#             */
+/*   Updated: 2019/08/13 16:12:31 by jhansen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_str_is_numeric(const char *str)
+void	ft_putstr_colour(char *colour, char *str)
 {
-	while ((ft_isdigit(*str) || *str == '-') && *str)
-		str++;
-	if (*str)
-		return (0);
-	return (1);
+	ft_putstr(colour);
+	ft_putstr(str);
+	ft_putstr(RESET);
 }
