@@ -12,6 +12,7 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
 # define INTMIN -2147483648
 # define RESET "\033[00m"
 # define GREEN "\033[32m"
@@ -20,6 +21,7 @@
 # define RED "\033[31m"
 # define YELLOW "\033[33m"
 # define CYAN "\033[36m"
+# define BUFF_SIZE 1000
 
 # include <string.h>
 # include <stdlib.h>
@@ -123,6 +125,7 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 */
 
 char				*ft_strndup(const char *s1, size_t n);
+int				get_next_line(const int fd, char **line);
 
 /*
 **Extra used in push_swap
